@@ -30,6 +30,10 @@ class App extends Component {
     }))
   }
 
+  removeAllCartItems = () => {
+    this.setState({cartList: []})
+  }
+
   incrementCartItemQuantity = productId => {
     this.setState(prevState => {
       const updatedCartList = prevState.cartList.map(item =>
@@ -64,8 +68,8 @@ class App extends Component {
         value={{
           cartList,
           addCartItem: this.addCartItem,
+          removeAllCartItems: this.removeAllCartItems,
           removeCartItem: this.removeCartItem,
-          removeCardItem: this.removeCartItem,
           incrementCartItemQuantity: this.incrementCartItemQuantity,
           decrementCartItemQuantity: this.decrementCartItemQuantity,
         }}
